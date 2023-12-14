@@ -12,7 +12,7 @@ const Toolbar = ({ context = null, resizeFunction }) => {
 
     const changeColor = (e) => {
         toolState.setFillColor(e.target.value)
-        toolState.setStrokeColor(e.target.value)
+        // toolState.setStrokeColor(e.target.value)
     }
 
     const download = () => {

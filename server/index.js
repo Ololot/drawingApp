@@ -38,7 +38,7 @@ app.post("/image", (req, res) => {
     }
     catch (e) {
         console.log(e);
-        return res.status(500).json("error");
+        return res.status(500).json("Server Error");
     }
 })
 
@@ -50,7 +50,7 @@ app.get("/image", (req, res) => {
     }
     catch (e) {
         console.log(e);
-        return res.status(500).json("error");
+        return res.status(500).json("Server Error");
     }
 })
 

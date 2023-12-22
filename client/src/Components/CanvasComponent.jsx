@@ -74,17 +74,25 @@ const Canvas = observer(() => {
 
     useEffect(() => {
         canvasState.setCanvas(canvasRef.current);
-        axios.get(`http://localhost:5000/image?id=${params.id}`)
-            .then(res => {
-                const img = new Image();
-                console.log("ИНИЦИАЛИЗАЦИЯ ", res)
-                img.src = res.data;
-                img.onload = () => {
-                    // this.ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
-                    // this.ctx.drawImage(img, 0, 0, canvasRef.current.width, canvasRef.current.height);
-                    // this.ctx.stroke();
-                }
-            })
+        function newConnection() {
+            axios.get(`http://localhost:5000/image?id=${params.id}`)
+                .then(res => {
+                    const img = new Image();
+                    console.log("ИНИЦИАЛИЗАЦИЯ ", res)
+                    img.src = res.data;
+                    img.onload = () => {
+                        const ctx = canvasRef.current.getContext("2d");
+                        ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+                        ctx.drawImage(img, 0, 0, canvasRef.current.width, canvasRef.current.height);
+                    }
+                })
+                .catch(err => {
+                    setTimeout(() => { newConnection(); }, 1000)
+                    // newConnection();
+                    console.log("ERROR ", err.message)
+                })
+        }
+        newConnection()
     }, [])
 
     return (

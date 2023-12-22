@@ -25,7 +25,6 @@ const Toolbar = ({ context = null, resizeFunction }) => {
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
-
     }
 
     return (

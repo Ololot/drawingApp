@@ -46,30 +46,31 @@ const Canvas = observer(() => {
     };
 
     useEffect(() => {
-        if (canvasState.userName !== null) {
-            const socket = new WebSocket("ws://localhost:5000/");
-            canvasState.setSocket(socket);
-            canvasState.setSessionid(params.id);
-            toolState.setTool(new Brush(canvasRef.current, socket, params.id));
 
-            socket.onopen = () => {
-                console.log("connection complite, ", canvasState.userName);
-                socket.send(JSON.stringify({ id: params.id, userName: canvasState.userName, method: "connection" }));
-            }
-            socket.onmessage = (e) => {
-                console.log(JSON.parse(e.data))
-                let msg = JSON.parse(e.data);
-                switch (msg.method) {
-                    case "connection":
-                        console.log(`Пользователь ${msg.userName} присоединился`);
-                        break;
-                    case "draw":
-                        console.log("draw")
-                        drawHandler(msg);
-                        break;
-                }
-            }
-        }
+        // if (canvasState.userName !== null) {
+        //     const socket = new WebSocket("ws://localhost:5000/");
+        //     canvasState.setSocket(socket);
+        //     canvasState.setSessionid(params.id);
+        //     toolState.setTool(new Brush(canvasRef.current, socket, params.id));
+
+        //     socket.onopen = () => {
+        //         console.log("connection complite, ", canvasState.userName);
+        //         socket.send(JSON.stringify({ id: params.id, userName: canvasState.userName, method: "connection" }));
+        //     }
+        //     socket.onmessage = (e) => {
+        //         console.log(JSON.parse(e.data))
+        //         let msg = JSON.parse(e.data);
+        //         switch (msg.method) {
+        //             case "connection":
+        //                 console.log(`Пользователь ${msg.userName} присоединился`);
+        //                 break;
+        //             case "draw":
+        //                 console.log("draw")
+        //                 drawHandler(msg);
+        //                 break;
+        //         }
+        //     }
+        // }
     }, [canvasState.userName])
 
     useEffect(() => {

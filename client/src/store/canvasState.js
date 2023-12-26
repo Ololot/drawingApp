@@ -2,11 +2,11 @@ import { makeAutoObservable } from "mobx";
 
 class canvasState {
     canvas = null;
-
+    listOfRooms = []; //список всех холстов, которые есть на сервере
     undoList = [];  //действия которые мы совершали
     redoList = [];  //действия, которые мы отменили
     userName = null;  //имя пользователя
-    sessionid = null; //id сессии
+    listOfRomossessionid = null; //id сессии
     socket = null; //само соединение, которое используется одной группой пользователей
 
     constructor() {
@@ -15,11 +15,12 @@ class canvasState {
     setSocket(socket) {
         this.socket = socket;
     }
+    setListOfRooms(listOfRooms) {
+        console.log(listOfRooms)
+        this.sessionid = listOfRooms;
+    }
     setSessionid(sessionid) {
         this.sessionid = sessionid;
-    }
-    setCanvas(canvas) {
-        this.canvas = canvas;
     }
     setCanvas(canvas) {
         this.canvas = canvas;

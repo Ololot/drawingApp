@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 app.ws("/", (ws, req) => {
-    // console.log("ПОКЛЮЧЕНИЕ УСТАНОВЛЕНО ", ws);
+    console.log("ПОКЛЮЧЕНИЕ УСТАНОВЛЕНО ");
 
     // ws.send("Success connect!");
     ws.on("message", (msg) => {
@@ -24,6 +24,17 @@ app.ws("/", (ws, req) => {
                 break;
             case "draw":
                 broadcastConnection(ws, msg);
+                break;
+            case "listOfRooms":
+                console.log("ListOfRooms");
+                fs.readdir('./files', (err, files) => {
+                    if (err) console.log(err);
+                    console.log(files);
+                    aWss.clients.forEach(client => { //пробегаем по всем подключенным клиентам, которые у нас хранятся
+                        client.send(JSON.stringify({ method: "listOfRooms", listOfRooms: files }))
+                    })
+                });
+
                 break;
         }
         // console.log(JSON.parse(msg))

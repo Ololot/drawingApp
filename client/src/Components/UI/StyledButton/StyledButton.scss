@@ -1,0 +1,184 @@
+@import "../../../styles/variables.scss";
+
+.SubstrateStyledBurron {
+    // min-width: 180px;
+    // max-width: 365px;
+    // width: 30%;
+    // height: 54px;
+    // border: 1px solid white;
+    // border-radius: 10px;
+    background: linear-gradient(to top left, #FFFFFF 0% 0%, #ff6a0000 0% 100%, #FFFFFF 100% 100%);
+    display: flex;
+    animation: hoverEffectReverse 0.3s;
+    // box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5019607843);
+    cursor: pointer;
+
+
+
+    &:hover {
+        animation: hoverEffect 0.2s;
+        background: linear-gradient(to top left, #FFFFFF 0% 50%, #ff6a0000 50% 50%, #FFFFFF 50% 100%);
+    }
+
+    &:active {
+        // animation: activeEffect 0.3s;
+        // background: linear-gradient(to top left, #FF6B00 0% 50%, #ff6a0000 50% 50%, #FF6B00 50% 100%);
+        background: linear-gradient(to top left, #FF6B00 0% 50%, #ff6a0000 50% 50%, #FF6B00 50% 100%);
+    }
+
+    .StyledButton {
+        height: 40px;
+        width: auto;
+        min-width: 150px;
+        margin: 2px;
+        background-color: $submain-bg-c;
+        outline: none;
+        border: none;
+        font-size: 25px;
+    }
+}
+
+.init {
+    animation: none;
+    background: linear-gradient(to top left, #FFFFFF 0% 0%, #ff6a0000 0% 100%, #FFFFFF 100% 100%);
+}
+
+@keyframes hoverEffect {
+    0% {
+        background: linear-gradient(to top left, #FFFFFF 0% 0%, #ff6a0000 0% 100%, #FFFFFF 100% 100%);
+    }
+
+    10% {
+        background: linear-gradient(to top left, #FFFFFF 0% 0%, #ff6a0000 10% 90%, #FFFFFF 100% 100%);
+    }
+
+    20% {
+        background: linear-gradient(to top left, #FFFFFF 0% 10%, #ff6a0000 20% 80%, #FFFFFF 90% 100%);
+    }
+
+    30% {
+        background: linear-gradient(to top left, #FFFFFF 0% 12.5%, #ff6a0000 30% 70%, #FFFFFF 87.5% 100%);
+    }
+
+    40% {
+        background: linear-gradient(to top left, #FFFFFF 0% 15%, #ff6a0000 30% 70%, #FFFFFF 85% 100%);
+    }
+
+    50% {
+        background: linear-gradient(to top left, #FFFFFF 0% 20%, #ff6a0000 35% 65%, #FFFFFF 80% 100%);
+    }
+
+    60% {
+        background: linear-gradient(to top left, #FFFFFF 0% 25%, #ff6a0000 40% 60%, #FFFFFF 75% 100%);
+    }
+
+    70% {
+        background: linear-gradient(to top left, #FFFFFF 0% 30%, #ff6a0000 50% 50%, #FFFFFF 70% 100%);
+    }
+
+    80% {
+        background: linear-gradient(to top left, white 0% 40%, #ff6a0000 50% 50%, white 60% 100%);
+    }
+
+    90% {
+        background: linear-gradient(to top left, #FFFFFF 0% 45%, #ff6a0000 50% 50%, white 55% 100%);
+    }
+
+    100% {
+        background: linear-gradient(to top left, #FFFFFF 0% 50%, #ff6a0000 50% 50%, #FFFFFF 50% 100%);
+    }
+}
+
+@keyframes hoverEffectReverse {
+    100% {
+        background: linear-gradient(to top left, #FFFFFF 0% 0%, #ff6a0000 0% 100%, #FFFFFF 100% 100%);
+    }
+
+    90% {
+        background: linear-gradient(to top left, #FFFFFF 0% 0%, #ff6a0000 10% 90%, #FFFFFF 100% 100%);
+    }
+
+    80% {
+        background: linear-gradient(to top left, #FFFFFF 0% 10%, #ff6a0000 20% 80%, #FFFFFF 90% 100%);
+    }
+
+    70% {
+        background: linear-gradient(to top left, #FFFFFF 0% 12.5%, #ff6a0000 30% 70%, #FFFFFF 87.5% 100%);
+    }
+
+    60% {
+        background: linear-gradient(to top left, #FFFFFF 0% 15%, #ff6a0000 30% 70%, #FFFFFF 85% 100%);
+    }
+
+    50% {
+        background: linear-gradient(to top left, #FFFFFF 0% 20%, #ff6a0000 35% 65%, #FFFFFF 80% 100%);
+    }
+
+    40% {
+        background: linear-gradient(to top left, #FFFFFF 0% 25%, #ff6a0000 40% 60%, #FFFFFF 75% 100%);
+    }
+
+    30% {
+        background: linear-gradient(to top left, #FFFFFF 0% 30%, #ff6a0000 50% 50%, #FFFFFF 70% 100%);
+    }
+
+    20% {
+        background: linear-gradient(to top left, white 0% 40%, #ff6a0000 50% 50%, white 60% 100%);
+    }
+
+    10% {
+        background: linear-gradient(to top left, #FFFFFF 0% 45%, #ff6a0000 50% 50%, white 55% 100%);
+    }
+
+    0% {
+        background: linear-gradient(to top left, #FFFFFF 0% 50%, #ff6a0000 50% 50%, #FFFFFF 50% 100%);
+    }
+}
+
+
+
+@keyframes activeEffect {
+    0% {
+        background: linear-gradient(to top left, #FF6B00 0% 0%, #ff6a0000 0% 100%, #FF6B00 100% 100%);
+    }
+
+    10% {
+        background: linear-gradient(to top left, #FF6B00 0% 0%, #ff6a0000 10% 90%, #FF6B00 100% 100%);
+    }
+
+    20% {
+        background: linear-gradient(to top left, #FF6B00 0% 10%, #ff6a0000 20% 80%, #FF6B00 90% 100%);
+    }
+
+    30% {
+        background: linear-gradient(to top left, #FF6B00 0% 12.5%, #ff6a0000 30% 70%, #FF6B00 87.5% 100%);
+    }
+
+    40% {
+        background: linear-gradient(to top left, #FF6B00 0% 15%, #ff6a0000 30% 70%, #FF6B00 85% 100%);
+    }
+
+    50% {
+        background: linear-gradient(to top left, #FF6B00 0% 20%, #ff6a0000 35% 65%, #FF6B00 80% 100%);
+    }
+
+    60% {
+        background: linear-gradient(to top left, #FF6B00 0% 25%, #ff6a0000 40% 60%, #FF6B00 75% 100%);
+    }
+
+    70% {
+        background: linear-gradient(to top left, #FF6B00 0% 30%, #ff6a0000 50% 50%, #FF6B00 70% 100%);
+    }
+
+    80% {
+        background: linear-gradient(to top left, #FF6B00 0% 40%, #ff6a0000 50% 50%, #FF6B00 60% 100%);
+    }
+
+    90% {
+        background: linear-gradient(to top left, #FF6B00 0% 45%, #ff6a0000 50% 50%, #FF6B00 55% 100%);
+    }
+
+    100% {
+        background: linear-gradient(to top left, #FF6B00 0% 50%, #ff6a0000 50% 50%, #FF6B00 50% 100%);
+    }
+}

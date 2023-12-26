@@ -5,11 +5,13 @@ import Toolbar from "./Components/Toolbar";
 import SettingBar from "./Components/SettingBar";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { useState } from "react";
-import { RoomDoor } from "./Components/RoomDoor/RoomDoor";
+import RoomDoor from "./Components/RoomDoor/RoomDoor";
+import useServer from "./hooks/useServer";
 
 function App() {
 
   const [roomDoor, set_roomDoor] = useState(true);
+  const server = useServer();
 
   return (
     <BrowserRouter>
@@ -22,7 +24,7 @@ function App() {
               {
                 roomDoor
                   ?
-                  <RoomDoor />
+                  <RoomDoor set_roomDoor={set_roomDoor} />
                   :
                   < CanvasComponent />
               }
